@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 spring:
   datasource:
      driver: com.mysql.cj.jdbc.Driver
@@ -14,3 +15,21 @@ jwt:
   secret: savz
 server:
   port: 8080
+=======
+spring:
+  datasource:
+     driver: com.mysql.cj.jdbc.Driver
+     url: jdbc:mysql://localhost:3306/movies
+     username: root
+     password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL5Dialect
+      show-sql: true
+      packagesToScan: com.boot.model
+jwt:
+  secret: savz
+server:
+  port: 8080
+>>>>>>> e8ba84d2c7a41d3152958aa2d87339412532a509
