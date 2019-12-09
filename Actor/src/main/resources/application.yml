@@ -1,0 +1,16 @@
+spring:
+  datasource:
+     driver: com.mysql.cj.jdbc.Driver
+     url: jdbc:mysql://localhost:3306/movies
+     username: root
+     password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL5Dialect
+      show-sql: true
+      packagesToScan: com.boot.entity
+jwt:
+  secret: savz
+server:
+  port: 8082
