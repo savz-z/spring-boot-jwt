@@ -2,13 +2,13 @@ package com.boot.dao;
 
 import java.util.List;
 
-import org.hibernate.query.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.boot.model.Movie;
+import com.boot.entity.Movie;
 
 @Repository
 public class MovieDAO {
@@ -21,6 +21,40 @@ public class MovieDAO {
 		 Query<Movie> query = session.createQuery("from Movie");
 		 List<Movie> movies = query.list();
 		 return movies;
+	}
+	
+	public List<Movie> getMoviesByYear(int year){
+		 Session session = sessionFactory.openSession();
+		 Query<Movie> query = session.createQuery("from Movie where releaseyear=:year");
+		 query.setParameter("year", year);
+		 List<Movie> movies = query.list();
+		 return movies;
+	}
+	
+	public Movie getMovieDetails(Long id){
+		 Session session = sessionFactory.openSession();
+		 Query<Movie> query = session.createQuery("from Movie where id=:id");
+		 query.setParameter("id", id);
+		 Movie movie = query.uniqueResult();
+		 return movie;
+	}
+	
+	public Movie addMovie(Movie movie){
+		Session session = sessionFactory.openSession();
+		session.saveOrUpdate(movie);
+		return movie;
+	}
+	
+	public Movie updateMovie(Movie movie){
+		Session session = sessionFactory.openSession();
+		session.saveOrUpdate(movie);
+		return movie;
+	}
+	
+	public boolean deleteMovie(int movieId){
+		Session session = sessionFactory.openSession();
+		//session.de(movie);
+		return true;
 	}
 	 
 	 /* 

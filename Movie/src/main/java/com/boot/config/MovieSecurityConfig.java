@@ -14,7 +14,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import com.boot.filter.UserAuthEntryPoint;
-import com.boot.filter.MovieJwtFilter;
+import com.boot.filter.UserAuthJwtFilter;
 import com.google.common.collect.ImmutableList;
 
 @Configuration
@@ -26,13 +26,14 @@ public class MovieSecurityConfig extends WebSecurityConfigurerAdapter{
 	private UserAuthEntryPoint authEntryPoint;
 	
 	@Autowired
-	private MovieJwtFilter jwtFilter;
+	private UserAuthJwtFilter jwtFilter;
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 // We don't need CSRF for this example
 		httpSecurity.csrf().disable().cors().and()
 // dont authenticate this particular request
-				.authorizeRequests().antMatchers("/movies").permitAll().
+				.authorizeRequests().antMatchers("/movies/*").permitAll()
+				.antMatchers("/movie/*").permitAll().
 // all other requests need to be authenticated
 				anyRequest().authenticated().and().
 // make sure we use stateless session; session won't be used to
