@@ -1,0 +1,31 @@
+<!--Modal Form Login with Avatar Demo-->
+
+    <div class="modal-dialog cascading-modal modal-avatar modal-md" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <div class="modal-abc">
+            <!--Header-->
+            <div class="modal-header">
+                <img src="{{imagePath}}" class="rounded-circle img-responsive rounded-image-modal" alt="Avatar photo">
+            </div>
+            <!--Body-->
+            <div class="modal-body text-center mb-1">
+  
+                <h5 class="mt-1 mb-2 movie-heading text-uppercase">{{title}}</h5>
+                <p><star-rating value="4" checkedcolor="red" uncheckedcolor="black" size="24px" readonly="false" (rate)="onRate($event)"></star-rating></p>
+  
+                <div class="md-form ml-0 mr-0">
+                    <textarea id="form1" class="form-control ml-0"></textarea>
+                    <label for="form1" class="ml-0">Add Feedback</label>
+                </div>
+  
+                <div class="text-center mt-4">
+                    <button class="btn btn-cyan">VOTE
+                    </button>
+                </div>
+            </div>
+  </div>
+        </div>
+        <!--/.Content-->
+    </div>
+  <!--Modal Form Login with Avatar Demo-->

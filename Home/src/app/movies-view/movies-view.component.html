@@ -1,0 +1,61 @@
+<div class="jumbotron mt-2 jumbotron-bg">
+            <h2 class="text-center">
+                MOVIES ARE MAGIC!!!!
+            </h2>
+            <p class="text-muted mt-4" style="font-size: large;font-weight:normal;">
+                Movies make people believe.  They give them what they need.  
+                They make them laugh when they need to laugh, cry when they need to cry, cheer when they need to cheer, scream when they need to scream, escape when they need to escape, reflect when they need to reflect,.
+            </p> 
+
+               <p class="text-muted" style="font-size: large;">It frees your imagination, and have an easy accessibility to consciousness 'which no other art can furnish us'. It created a sense of enjoyment that comes with additional gratifications such as a feeling of vitality, experiencing emotions, learning and above all aesthetic emotion.</p>
+               <div class="row">
+                  <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4">
+                        <p class="animated fadeIn delay-3s text-center btn-success button-cust mt-4 mb-4" style="border-radius: 50px; font-size: 1.5rem;height: 40px;">MAGIC... THAT'S WHAT IT IS.</p> 
+                      </div>
+                      <div class="col-md-4">
+                        </div>
+               </div>
+               
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-11">
+                        <h3 class="text-right">
+                            MOVIES
+                        </h3>
+                    </div>
+                <div class="col-md-1">
+                    <div class="dropdown">
+      
+                        <button class="btn btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown">
+                            {{selectedYear}}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" (click)="selectValue(2019);" ng-disabled="selectedYear == 2019">2019</a> 
+                            <a class="dropdown-item" (click)="selectValue(2018);" ng-disabled="selectedYear == 2018">2018</a>
+                            <a class="dropdown-item" (click)="selectValue(2017);" ng-disabled="selectedYear == 2017">2017</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+        </div>
+      </div>
+
+      <div class="container-fluid mt-5">
+
+          <div class="row">
+              <div class="col-md-12">
+                      <div *ngIf="movies">
+                  <app-multi-carousel [slides]="movies" [itemsPerSlide]="itemsPerSlide" [slideInterval]="interval">
+                  </app-multi-carousel>
+                  </div>
+        
+              </div>
+          </div>
+        </div>

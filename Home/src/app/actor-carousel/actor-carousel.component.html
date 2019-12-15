@@ -1,0 +1,34 @@
+<div id="multi-item-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div class="carousel-inner">
+      
+      
+          <div *ngFor="let a of itemsPerSlideArray; let slideIndex = index"
+          [ngClass]="{'carousel-item': true,'active': slideIndex == 0}">
+            <div class="row">
+              <ng-container *ngFor="let item of slides; let itemIndex = index">
+                <div [ngClass]="{'col-sm-12': true,'col-md-12': itemsPerSlide == 1, 'col-md-6': itemsPerSlide == 2, 'col-md-4': itemsPerSlide == 3, 'col-md-3': itemsPerSlide == 4}" *ngIf="itemIndex >= (itemsPerSlide * slideIndex) && itemIndex < ((slideIndex+1) * itemsPerSlide)">
+                  <div class="card mb-2">
+                    <img class="card-img-top" src="{{item.actorpath}}" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title">{{item.actorname}}</h4>
+                       <button style="float:right;" class="btn aqua-gradient" (click)="openActorDetails(item.actorId)">DETAILS</button>
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+      
+      
+        </div>
+        <a href="#multi-item-carousel" class="multi-carousel-left btn-floating waves-effect waves-light" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a href="#multi-item-carousel" class="multi-carousel-right btn-floating waves-effect waves-light" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+      <div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal-dialog modal fade">
+      <app-movie-action-modal></app-movie-action-modal>
+      </div>
+      

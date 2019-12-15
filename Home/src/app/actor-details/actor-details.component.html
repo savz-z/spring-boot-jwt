@@ -1,0 +1,55 @@
+<div class="container-fluid" *ngIf="actor">
+
+        <div class="row">
+            <div class="col-md-12">
+      <div class="jumbotron mt-2 jumbotron-bg">
+      
+        
+        <div class="row movie-container">
+            <div class="col-md-6 ">
+                <div class="card mb-2" style="width: 85%;border-radius:20px;">
+                    <img class="card-img-top" style="border-radius:20px;" src="{{actor.actorpath}}" alt="Card image cap">
+                  </div>
+            </div>
+            <div class="col-md-6">
+                <div class="movie-heading text-uppercase mt-3 mr-4 animated slideInRight">{{actor.actorname}}</div>
+                <div class="movie-section-heading text-uppercase mt-3 mr-4 animated slideInRight">Born: {{actor.birthdate | date: 'longDate'}} in Bombay, Maharashtra, India</div>
+                <div class="actor-section-heading text-uppercase mt-3 mr-4 animated slideInRight">{{actor.actordesc1}}</div>
+                <div class="actor-section-heading text-uppercase mt-3 mr-4 animated slideInRight">{{actor.actordesc2}}</div>
+                <div class="actor-section-heading text-uppercase mt-3 mr-4 animated slideInRight">{{actor.actordesc3}}</div>
+                <div class="actor-section-heading text-uppercase mt-3 mr-4 animated slideInRight">{{actor.actordesc4}}</div>
+                <div class="actor-section-heading text-uppercase mt-3 mr-4 animated slideInRight">{{actor.actordesc5}}</div>
+                  </div>       
+    
+              </div>
+       
+      </div>
+    
+      <div class="row mt-2">
+          <div class="col-md-12">
+              <div class="row">
+                  <div class="col-md-12">
+                      <h3 class="text-left">
+                          MOVIES
+                      </h3>
+                  </div>
+          </div>
+    
+      </div>
+    </div>
+    
+    <div class="container-fluid mt-5">
+    
+        <div class="row">
+            <div class="col-md-12">
+                    <div *ngIf="movies">
+                            <app-multi-carousel [slides]="movies" [itemsPerSlide]="itemsPerSlide" [slideInterval]="interval">
+                                </app-multi-carousel>
+                </div>
+      
+            </div>
+        </div>
+      </div>
+        </div>
+        </div>
+        </div>    

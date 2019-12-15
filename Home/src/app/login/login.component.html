@@ -1,0 +1,54 @@
+<div class="card">
+
+    <h5 class="card-header info-color white-text text-center py-4">
+        <strong>Sign in</strong>
+    </h5>
+
+    <div class="card-body px-lg-5 pt-0">
+
+        <form class="md-form" style="color: #757575;margin-top:25px;" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+
+            <input type="email" formControlName="username" id="username" autocomplete="off" class="form-control" placeholder="UserName/Email">
+            <div class="error" *ngIf="loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched">Username is required</div>
+
+            <input type="password" formControlName="password" id="password" autocomplete="off" class="form-control" placeholder="Password">
+            <div class="error" *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched">Password is required</div>
+
+             <div class="d-flex justify-content-around mt-4">
+                <div>
+                    <!-- Remember me -->
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="isRememberMeChecked" formControlName="isRememberMeChecked">
+                        <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                    </div>
+                </div>
+                <div style="margin-top:10px;">
+                    <!-- Forgot password -->
+                    <a href="">Forgot password?</a>
+                </div>
+            </div>
+
+            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign in</button>
+
+            <div class="text-center">
+                <p>Not a member?
+                    <a href="">Register</a>
+                </p>
+
+                <p>or sign in with:</p>
+                <!--<a type="button" class="btn-floating btn-fb btn-sm">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a type="button" class="btn-floating btn-tw btn-sm">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a type="button" class="btn-floating btn-li btn-sm">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a type="button" class="btn-floating btn-git btn-sm">
+                    <i class="fab fa-github"></i>
+                </a>-->
+            </div>
+        </form>
+    </div>
+</div>
