@@ -26,7 +26,7 @@ public class MovieService {
 		List<MovieVO> moviesList = new ArrayList<MovieVO>();
 		List<Movie> movies = movieDAO.getMovies();
 		moviesList = movies.stream().map(x -> 
-		new MovieVO(x.getId(),x.getMoviename(), x.getReleasedate(), x.getDirector(),x.getMoviepath(),x.getProducer(),x.getStory(),x.getDuration())).collect(Collectors.toList());
+		new MovieVO(x.getId(),x.getMoviename(), x.getReleasedate(), x.getDirector(),x.getMoviepath(),x.getProducer(),x.getWriter(),x.getDuration())).collect(Collectors.toList());
 		return moviesList;
 	}
 	
@@ -34,7 +34,7 @@ public class MovieService {
 		List<MovieVO> moviesList = new ArrayList<MovieVO>();
 		List<Movie> movies = movieDAO.getMoviesByYear(year);
 		moviesList = movies.stream().map(x -> 
-		new MovieVO(x.getId(),x.getMoviename(), x.getReleasedate(), x.getDirector(),x.getMoviepath(),x.getProducer(),x.getStory(),x.getDuration())).collect(Collectors.toList());
+		new MovieVO(x.getId(),x.getMoviename(), x.getReleasedate(), x.getDirector(),x.getMoviepath(),x.getProducer(),x.getWriter(),x.getDuration())).collect(Collectors.toList());
 		return moviesList;
 	}
 	
@@ -50,7 +50,7 @@ public class MovieService {
 		movieVO.setReleasedate(movie.getReleasedate());
 		movieVO.setReleaseyear(movie.getReleaseyear());	
 		movieVO.setProducer(movie.getProducer());
-		movieVO.setStory(movie.getStory());
+		movieVO.setWriter(movie.getWriter());
 		movieVO.setDuration(movie.getDuration());
 		Set<Actor> actors = movie.getActors();
 		movieVO.setActors(actors.stream().map(x-> new ActorVO(x.getId(), x.getActorame(), x.getActorpath())).collect(Collectors.toList()));

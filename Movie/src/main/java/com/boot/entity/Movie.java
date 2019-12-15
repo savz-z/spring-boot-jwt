@@ -47,8 +47,8 @@ public class Movie implements Serializable{
 	@Column(name = "movie_producer")
 	private String producer;
 	
-	@Column(name = "movie_story")
-	private String story;
+	@Column(name = "movie_writer")
+	private String writer;
 	
 	@Column(name = "movie_duration")
 	private Long duration;
@@ -62,8 +62,6 @@ public class Movie implements Serializable{
 	@Column(name = "movie_trailer_url")
 	private String trailerurl;
 	
-	@Column(name = "actors")
-	private String actorIds;
 	
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinTable(name = "actor_movie", joinColumns = { 
@@ -136,14 +134,6 @@ public class Movie implements Serializable{
 		this.trailerurl = trailerurl;
 	}
 
-	public String getActorIds() {
-		return actorIds;
-	}
-
-	public void setActorIds(String actorIds) {
-		this.actorIds = actorIds;
-	}
-
 	public Set<Actor> getActors() {
 		return actors;
 	}
@@ -160,12 +150,12 @@ public class Movie implements Serializable{
 		this.producer = producer;
 	}
 
-	public String getStory() {
-		return story;
+	public String getWriter() {
+		return writer;
 	}
 
-	public void setStory(String story) {
-		this.story = story;
+	public void setWriter(String writer) {
+		this.writer = writer;
 	}
 
 	public Long getDuration() {

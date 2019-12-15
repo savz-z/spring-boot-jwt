@@ -32,7 +32,7 @@ public class MovieVO implements Serializable{
 	
 	private String producer;
 	
-	private String story;
+	private String writer;
 	
 	private Long duration;
 	
@@ -48,14 +48,14 @@ public class MovieVO implements Serializable{
 		
 	}
 	
-	public MovieVO(Long id, String moviename, Date releasedate, String director,String moviepath, String producer,String story,Long duration){
+	public MovieVO(Long id, String moviename, Date releasedate, String director,String moviepath, String producer,String writer,Long duration){
 		this.movieid = id;
 		this.moviename = moviename;
 		this.releasedate = releasedate;
 		this.director = director;
 		this.moviepath = moviepath;
 		this.producer = producer;
-		this.story = story;
+		this.writer = writer;
 		this.duration = duration;
 	}
 
@@ -141,12 +141,12 @@ public class MovieVO implements Serializable{
 		this.producer = producer;
 	}
 
-	public String getStory() {
-		return story;
+	public String getWriter() {
+		return writer;
 	}
 
-	public void setStory(String story) {
-		this.story = story;
+	public void setWriter(String writer) {
+		this.writer = writer;
 	}
 
 	public Long getDuration() {
